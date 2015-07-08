@@ -1,15 +1,15 @@
-<?
+<?php
 
 class Home extends CI_controller {
-  public function index() {
-    $data = array(
-     // 'headerContent' => $this->load->view('header', array(), TRUE),
-      //'mainContent' => $this->load->view('main', array(), TRUE),
-      //'footerContent' => $this->load->view('footer', array(), TRUE),
-    );
-   $this->custom_smarty->display('home.tpl');
-  } 
-  
+	public function index() {
+		$data = array();
+	
+		$this->custom_smarty->assign('js', APPPATH.'/views/templates/base/base_js.tpl');
+		$this->custom_smarty->assign('css', APPPATH.'/views/templates/base/base_css.tpl');
+		$this->custom_smarty->assign('body',APPPATH.'/views/templates/pages/home.tpl');
+		$this->custom_smarty->display(APPPATH.'/views/templates/base/page.tpl');
+	} 
+
 }
 
 ?>
